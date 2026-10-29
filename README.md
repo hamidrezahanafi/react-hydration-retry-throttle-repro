@@ -26,4 +26,4 @@ The page title is `PASS` or `STUCK` once it settles, and the console logs the fi
 
 To try the fix, `npm run fix` applies the change from #38030 to the installed `react-dom` production build and rebuilds. `npm run unfix` reverts it. The server doesn't need a restart.
 
-On `react-dom@19.3.0-canary-dc9aed36-20261027`: 10/10 loads stuck without the fix, 0/10 with it.
+On `react-dom@19.3.0-canary-dc9aed36-20261027`, most runs had 9 or 10 of 10 loads stuck without the fix, and 0 of 10 with it. It's timing-sensitive, so an occasional run (often the first one after starting) has few or no stuck loads; run `npm run check` again. `node check.mjs 10 <ms>` changes the gap between steps.
