@@ -1,0 +1,23 @@
+{
+  "name": "react-hydration-retry-throttle-repro",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "sh build.sh",
+    "start": "npm run build && node server.mjs",
+    "check": "node check.mjs",
+    "fix": "node apply-fix.mjs && npm run build",
+    "unfix": "node apply-fix.mjs revert && npm run build"
+  },
+  "dependencies": {
+    "react": "19.3.0-canary-dc9aed36-20261027",
+    "react-dom": "19.3.0-canary-dc9aed36-20261027"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.12",
+    "playwright": "1.60.0"
+  },
+  "allowScripts": {
+    "esbuild@0.25.12": true
+  }
+}
